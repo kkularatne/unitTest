@@ -2,9 +2,9 @@ package research.and.development.unitTest.api
 
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers
 import org.springframework.test.web.servlet.setup.MockMvcBuilders
-import research.and.development.unitTest.api.dto.DetailDTO
-import research.and.development.unitTest.api.exception.DetailsNotFoundException
-import research.and.development.unitTest.api.service.DetailService
+import research.and.development.unitTest.dto.DetailDTO
+import research.and.development.unitTest.exception.DetailsNotFoundException
+import research.and.development.unitTest.service.DetailService
 import spock.lang.Specification
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
@@ -15,10 +15,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  */
 class ControllerSpec extends Specification {
     private Controller controller = new Controller();
+
     def mockMvc = MockMvcBuilders.standaloneSetup(controller).build()
 
-
-    void "Test controller without param"() {
+    void "Test api/greeting without param"() {
         setup:
         def request = get("/api/greeting");
 
@@ -30,7 +30,7 @@ class ControllerSpec extends Specification {
         response.andExpect(MockMvcResultMatchers.content().string("Hello anonymous"))
     }
 
-    void "Test controller with empty param"() {
+    void "Test api/greeting with empty param"() {
         setup:
         def request = get("/api/greeting");
         request.param("name", "")
@@ -43,7 +43,7 @@ class ControllerSpec extends Specification {
         response.andExpect(MockMvcResultMatchers.content().string("Hello anonymous"))
     }
 
-    void "Test controller with param"() {
+    void "Test api/greeting with param"() {
         setup:
         def request = get("/api/greeting");
         request.param("name", "John")
@@ -57,7 +57,7 @@ class ControllerSpec extends Specification {
         response.andExpect(MockMvcResultMatchers.content().string("Hello John"))
     }
 
-    void "Test getDetails for exception"() {
+    void "Test api/getDetails for exception"() {
         setup:
         def request = get("/api/getDetails");
         request.param("username", "John")
@@ -76,7 +76,7 @@ class ControllerSpec extends Specification {
         response.andExpect(MockMvcResultMatchers.content().string("username not found"))
     }
 
-    void "Test getDetails"() {
+    void "Test api/getDetails"() {
         setup:
         def request = get("/api/getDetails");
         request.param("username", "John")

@@ -1,4 +1,4 @@
-package research.and.development.unitTest.api.dto;
+package research.and.development.unitTest.dto;
 
 /**
  * Created by kkularatne on 17/10/2017.

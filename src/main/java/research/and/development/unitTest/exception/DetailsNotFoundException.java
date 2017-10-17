@@ -1,4 +1,4 @@
-package research.and.development.unitTest.api.exception;
+package research.and.development.unitTest.exception;
 
 /**
  * Created by kkularatne on 17/10/2017.

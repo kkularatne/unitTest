@@ -6,9 +6,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import research.and.development.unitTest.api.dto.DetailDTO;
-import research.and.development.unitTest.api.exception.DetailsNotFoundException;
-import research.and.development.unitTest.api.service.DetailService;
+import research.and.development.unitTest.dto.DetailDTO;
+import research.and.development.unitTest.exception.DetailsNotFoundException;
+import research.and.development.unitTest.service.DetailService;
 
 /**
  * Created by kkularatne on 17/10/2017.
